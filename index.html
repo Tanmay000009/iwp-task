@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+  </head>
+  <body>
+    <hr />
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <br />
+    <button onclick="calculator1('add')">Add</button>
+    <button onclick="calculator1('sub')">Subtract</button>
+    <button onclick="calculator1('mul')">Multiply</button>
+    <button onclick="calculator1('div')">Divide</button>
+    <br />
+    Ans: <span id="ans1"></span>
+    <hr />
+    <input id="num11" type="number" />
+    <input id="num22" type="number" />
+    <br />
+    <input type="radio" id="r1" name="operator" value="add" >Add</input>
+    <input type="radio" id="r2" name="operator" value="sub" >Subtract</input>
+    <input type="radio" id="r3" name="operator" value="mul" >Multiply</input>
+    <input type="radio" id="r4" name="operator" value="div" >Divide</input>
+    <br />
+    <button onclick="calculator2()">Calculate</button>
+    <br>
+    Ans: <span id="ans2"></span>
+    <hr>
+    <input id="num111" type="number" />
+    <input id="num222" type="number" />
+    <br />
+    <input type="checkbox" id="c1" class="operatorCheckbox" value="add" >Add</input>
+    <input type="checkbox" id="c2" class="operatorCheckbox" value="sub" >Subtract</input>
+    <input type="checkbox" id="c3" class="operatorCheckbox" value="mul" >Multiply</input>
+    <input type="checkbox" id="c4" class="operatorCheckbox" value="div" >Divide</input>
+    <br />
+    <button onclick="calculator3()">Calculate</button>
+    <br>
+    Ans: <span id="ans3"></span>
+    <hr>
+  </body>
+  <script>
+    const calculator1 = (operator) => {
+      if (
+        parseInt(document.getElementById("num1").value) &&
+        parseInt(document.getElementById("num2").value)
+      ) {
+        var res = 0;
+        if (operator == "add") {
+          res =
+            parseInt(document.getElementById("num1").value) +
+            parseInt(document.getElementById("num2").value);
+        } else if (operator == "sub") {
+          res =
+            parseInt(document.getElementById("num1").value) -
+            parseInt(document.getElementById("num2").value);
+        } else if (operator == "mul") {
+          res =
+            parseInt(document.getElementById("num1").value) *
+            parseInt(document.getElementById("num2").value);
+        } else if (operator == "div") {
+          res =
+            parseInt(document.getElementById("num1").value) /
+            parseInt(document.getElementById("num2").value);
+        }
+        document.getElementById("ans1").innerHTML = res;
+      } else {
+        alert("Please enter numbers properly!");
+      }
+    };  
+    const calculator2 = () => {
+      if (
+        parseInt(document.getElementById("num11").value) &&
+        parseInt(document.getElementById("num22").value)
+      ) {
+        var res = 0;
+        var operator = document.querySelector('input[name="operator"]:checked').value;
+        if (operator == "add") {
+          res =
+            parseInt(document.getElementById("num11").value) +
+            parseInt(document.getElementById("num22").value);
+        } else if (operator == "sub") {
+          res =
+            parseInt(document.getElementById("num11").value) -
+            parseInt(document.getElementById("num22").value);
+        } else if (operator == "mul") {
+          res =
+            parseInt(document.getElementById("num11").value) *
+            parseInt(document.getElementById("num22").value);
+        } else if (operator == "div") {
+          res =
+            parseInt(document.getElementById("num11").value) /
+            parseInt(document.getElementById("num22").value);
+        }
+        document.getElementById("ans2").innerHTML = res;
+      } else {
+        alert("Please enter numbers properly!");
+      }
+    };
+    const calculator3 = () => {
+      if (
+        parseInt(document.getElementById("num111").value) &&
+        parseInt(document.getElementById("num222").value)
+      ) {
+        var res = 0;
+        var operator = document.querySelector('.operatorCheckbox:checked').value;
+        if (operator == "add") {
+          res =
+            parseInt(document.getElementById("num111").value) +
+            parseInt(document.getElementById("num222").value);
+        } else if (operator == "sub") {
+          res =
+            parseInt(document.getElementById("num111").value) -
+            parseInt(document.getElementById("num222").value);
+        } else if (operator == "mul") {
+          res =
+            parseInt(document.getElementById("num111").value) *
+            parseInt(document.getElementById("num222").value);
+        } else if (operator == "div") {
+          res =
+            parseInt(document.getElementById("num111").value) /
+            parseInt(document.getElementById("num222").value);
+        }
+        document.getElementById("ans3").innerHTML = res;
+      } else {
+        alert("Please enter numbers properly!");
+      }
+    };
+  </script>
+</html>
